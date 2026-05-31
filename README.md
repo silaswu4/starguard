@@ -1,6 +1,6 @@
-# AgentGate
+# Starguard AI
 
-AgentGate is an approval and audit layer for AI agents operating inside business workflows.
+Starguard AI is the governance layer for businesses deploying autonomous AI agents.
 
 The demo uses simulated Gmail, CRM, support, and finance actions so the core idea is easy to inspect: agents propose actions, policies evaluate risk, humans approve or reject, and every event lands in an audit trail.
 

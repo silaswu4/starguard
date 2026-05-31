@@ -9,3 +9,7 @@ yarn-debug.log*
 yarn-error.log*
 .DS_Store
 tsconfig.tsbuildinfo
+reference/
+starguard-desktop.png
+starguard-mobile.png
+.scratch-platform-rebuild/

@@ -8,7 +8,7 @@ export function PageHeader({
   action
 }: {
   kicker: string;
-  title: string;
+  title: React.ReactNode;
   copy: string;
   action?: React.ReactNode;
 }) {

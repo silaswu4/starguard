@@ -4,22 +4,23 @@ import Link from "next/link";
 import { ArrowRight, RotateCcw } from "lucide-react";
 import { useAgentGate } from "@/components/agentgate-provider";
 import { PageHeader, Badge, StatCard, agentName, formatDate, PayloadBlock } from "@/components/ui";
-import { agents } from "@/lib/data";
+import { agents, policies } from "@/lib/data";
 
 export default function DashboardPage() {
   const { actions, logs, resetDemo } = useAgentGate();
   const pending = actions.filter((action) => action.status === "pending");
   const blocked = actions.filter((action) => action.status === "blocked");
   const highRisk = actions.filter((action) => ["high", "critical"].includes(action.riskLevel));
+  const completed = actions.filter((action) => action.status === "completed" || action.status === "approved");
 
   return (
     <>
       <PageHeader
-        kicker="00 / Control Room"
-        title="Agent actions, gated before they touch the business"
-        copy="A portfolio-ready MVP for registering agents, evaluating proposed actions, routing risky work to a human, and preserving audit evidence."
+        kicker="Governed Autonomy"
+        title={<>Govern<br />the agents<br />running your<br />business.</>}
+        copy="Policy, approvals, audit trails, and observability for enterprise agent systems."
         action={
-          <button className="button" onClick={resetDemo}>
+          <button className="button primary" onClick={resetDemo}>
             <RotateCcw size={16} /> Reset Demo
           </button>
         }
@@ -28,19 +29,17 @@ export default function DashboardPage() {
       <section className="grid dashboard-grid">
         <div className="grid">
           <div className="grid stats-grid">
-            <StatCard label="Pending approvals" value={pending.length} meta="Waiting on reviewer" />
-            <StatCard label="Actions evaluated" value={actions.length} meta="In this local demo" />
-            <StatCard label="Blocked actions" value={blocked.length} meta="Stopped by policy" />
-            <StatCard label="Active agents" value={agents.length} meta="Registered workflows" />
-            <StatCard label="High-risk actions" value={highRisk.length} meta="High or critical" />
-            <StatCard label="Audit events" value={logs.length} meta="Stored evidence" />
+            <StatCard label="Total agents" value={agents.length} meta="Registered systems" />
+            <StatCard label="Active policies" value={policies.length} meta="Enforcement rules" />
+            <StatCard label="Pending approvals" value={pending.length} meta="Awaiting review" />
+            <StatCard label="Policy violations" value={blocked.length} meta="Blocked actions" />
           </div>
 
           <article className="panel panel-pad">
             <div className="row">
               <div>
-                <span className="section-kicker">Approval Queue</span>
-                <h2>Requests that need a human</h2>
+                <span className="section-kicker">Approval Route</span>
+                <h2>Requests awaiting authorization</h2>
               </div>
               <Link className="button" href="/approvals">
                 Review <ArrowRight size={16} />
@@ -63,6 +62,14 @@ export default function DashboardPage() {
         </div>
 
         <aside className="panel panel-pad">
+          <div className="row">
+            <span className="section-kicker">System Coverage</span>
+            <Badge value={highRisk.length > 0 ? "requires_approval" : "allowed"} />
+          </div>
+          <div style={{ margin: "22px 0 26px" }}>
+            <span className="stat-value">{Math.round((completed.length / Math.max(actions.length, 1)) * 100)}%</span>
+            <p className="meta">Actions contained by policy, approval, or audit record.</p>
+          </div>
           <span className="section-kicker">Recent Audit</span>
           <div className="timeline">
             {logs.slice(0, 8).map((log) => (

@@ -16,8 +16,8 @@ type AgentGateContextValue = {
 };
 
 const AgentGateContext = createContext<AgentGateContextValue | undefined>(undefined);
-const actionKey = "agentgate.actions.v3";
-const logKey = "agentgate.logs.v3";
+const actionKey = "starguard.actions.v1";
+const logKey = "starguard.logs.v1";
 
 const seedTime = new Date("2026-05-27T19:20:00.000Z").toISOString();
 
