@@ -124,7 +124,7 @@ function Hero() {
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <Magnetic strength={0.18}>
-                <Link className="btn-primary" href="/pricing">
+                <Link className="btn-primary" href="mailto:silaswu4@gmail.com?subject=Starguard%20demo">
                   Book a demo
                   <ArrowRight size={14} />
                 </Link>
@@ -556,7 +556,7 @@ function DarkCTA() {
               Wire it in under an hour. Watch the first policy verdict land this afternoon.
             </p>
             <div className="flex flex-wrap items-center gap-3">
-              <Link className="btn-primary" href="/pricing">
+              <Link className="btn-primary" href="mailto:silaswu4@gmail.com?subject=Starguard%20demo">
                 Book a demo
                 <ArrowRight size={14} />
               </Link>

@@ -415,7 +415,7 @@ function ClosingCTA() {
             Start free or book a 30-minute architecture walkthrough with a Starguard solutions engineer.
           </p>
           <div className="flex flex-wrap items-center gap-3">
-            <Link className="btn-primary" href="/pricing">
+            <Link className="btn-primary" href="mailto:silaswu4@gmail.com?subject=Starguard%20demo">
               Book a demo <ArrowRight size={14} />
             </Link>
             <Link className="btn-ghost-inverse" href="/security">

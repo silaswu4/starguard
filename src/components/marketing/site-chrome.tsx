@@ -70,7 +70,7 @@ export function SiteHeader() {
           <Link className="hidden text-[14px] font-medium text-[color:var(--color-foreground-soft)] hover:text-[color:var(--color-foreground)] sm:inline-block" href="/dashboard">
             Sign in
           </Link>
-          <Link className="btn-primary" href="/pricing">
+          <Link className="btn-primary" href="mailto:silaswu4@gmail.com?subject=Starguard%20demo">
             Book a demo
           </Link>
         </div>

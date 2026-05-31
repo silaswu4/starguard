@@ -209,7 +209,7 @@ function ClosingCTA() {
             30-minute walkthrough tailored to security, GRC, platform, or data. Bring your toughest agent question.
           </p>
           <div className="flex flex-wrap items-center gap-3">
-            <Link className="btn-primary" href="/pricing">
+            <Link className="btn-primary" href="mailto:silaswu4@gmail.com?subject=Starguard%20demo">
               Book a demo <ArrowRight size={14} />
             </Link>
             <Link className="btn-ghost-inverse" href="/security">
